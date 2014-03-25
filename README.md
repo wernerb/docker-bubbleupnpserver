@@ -28,3 +28,7 @@ To build and run yourself. Clone this repository and from that folder run:
     $ docker build -t wernerb/bubbleupnpserver . 
     
 Then use the Quick start command to run the bubbleupnpserver.
+
+
+### Trusted build
+This container is also available as a Trusted Build on the [docker index](https://index.docker.io/u/wernerb/bubbleupnpserver/)
