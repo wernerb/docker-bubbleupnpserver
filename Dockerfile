@@ -1,7 +1,7 @@
 # Build: docker build --rm=true -t bubbleupnpserver .
 # Run: docker run -d --net=host --privileged bubbleupnpserver
 
-from haroon/docker-oracle-jdk7
+from dockeruser/oracle-java7
 maintainer Werner Buck "email@wernerbuck.nl"
 
 #install unzip and wget
@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y unzip wget
 #download bubbleupnpserver, ffmpeg and clean up
 RUN mkdir -p /opt/bubbleupnpserver && \
   cd /opt/bubbleupnpserver && \
-  wget -q http://www.bubblesoftapps.com/bubbleupnpserver/ffmpeg.zip && \
-  wget -q http://www.bubblesoftapps.com/bubbleupnpserver/0.8.2/BubbleUPnPServer-0.8.2.zip -O bubbleupnpserver.zip && \
+  wget -q http://www.bubblesoftapps.com/bubbleupnpserver/core/ffmpeg_linux.zip -O ffmpeg.zip && \
+  wget -q http://www.bubblesoftapps.com/bubbleupnpserver/BubbleUPnPServer-distrib.zip -O bubbleupnpserver.zip && \
   unzip bubbleupnpserver.zip && \
   unzip ffmpeg.zip && \
   rm -rf bubbleupnpserver.zip ffmpeg.zip && \
